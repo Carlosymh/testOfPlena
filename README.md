@@ -22,16 +22,22 @@ PORT=<PUERTO_EN_EL_QUE_CORRERÁ_LA_API>
 Reemplaza <URL_DE_CONEXIÓN_A_MONGODB> con la URL de conexión a tu base de datos MongoDB.
 Reemplaza <RUTA_AL_ARCHIVO_JSON_DE_HORARIOS> con la ruta al archivo JSON que contiene los horarios de los médicos.
 Reemplaza <PUERTO_EN_EL_QUE_CORRERÁ_LA_API> con el puerto en el que deseas que se ejecute la API (por ejemplo, 3000).
-Instala las dependencias:
 
+Instala las dependencias:
 Bash
 
 npm install
-Ejecuta la API:
 
+Ejecuta la API:
 Bash
 
-npm run start
+npm  start
+
+corre las pruebas :
+Bash
+
+npm  test
+
 La API estará disponible en http://localhost:<PUERTO>, donde <PUERTO> es el puerto que especificaste en el archivo .env.
 
 Estructura del Proyecto
