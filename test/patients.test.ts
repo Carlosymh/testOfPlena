@@ -1,18 +1,18 @@
 import request from 'supertest';
 import app from '../src/index'; 
 
-describe('Paciente Endpoints', () => {
-    it('debería obtener todas las pacientes', async () => {
-      const respuesta = await request(app).get('/getAllPatients');
-      expect(respuesta.status).toBe(200);
+describe('Patients Endpoints', () => {
+    it('It should get all the patients', async () => {
+      const response = await request(app).get('/getAllPatients');
+      expect(response.status).toBe(200);
     });
 
-    it('debería obtener una paciente por ID', async () => {
+    it('It should get a patient by ID', async () => {
       const id="67ea92b2f16ab6c6f064fec8"
-      const respuesta = await request(app).get(`/getPatientsById/${id}`);
-      expect(respuesta.status).toBe(200);
+      const response = await request(app).get(`/getPatientsById/${id}`);
+      expect(response.status).toBe(200);
     });
-    it('debería crear una paciente', async () => {
+    it('It should create a patient', async () => {
       const body = {
           firstName:"Karla",
           lastName:"Esquivel Luna",
@@ -20,14 +20,14 @@ describe('Paciente Endpoints', () => {
           email:"Karla@example.com",
           birthday:"04/11/1993"
         };
-        const respuesta = await request(app).post('/createPatients').send(body);
-        expect(respuesta.status).toBe(201);
+        const response = await request(app).post('/createPatients').send(body);
+        expect(response.status).toBe(201);
       });
 
-      it('debería regresar un error al crear una paciente', async () => {
+      it('It should return an error when creating a patient', async () => {
         const body = {};
-          const respuesta = await request(app).post('/createPatients').send(body);
-          expect(respuesta.status).toBe(400);
+          const response = await request(app).post('/createPatients').send(body);
+          expect(response.status).toBe(400);
         });
 
 });
